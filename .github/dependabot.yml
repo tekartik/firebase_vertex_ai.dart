@@ -9,6 +9,10 @@ updates:
     directory: "vertex_ai"
     schedule:
       interval: "monthly"
+  - package-ecosystem: "pub"
+    directory: "vertex_ai_google"
+    schedule:
+      interval: "monthly"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
