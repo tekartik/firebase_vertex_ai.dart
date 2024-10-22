@@ -18,8 +18,10 @@ abstract class FirebaseVertexAi
   /// a known and supported model. If not, attempts to generate content
   /// will fail.
   ///
+  /// default to gemini-1.5-flash
+  ///
   /// The optional [safetySettings] and [generationConfig] can be used to
   /// control and guide the generation. See [SafetySetting] and
   /// [GenerationConfig] for details.
-  VaiGenerativeModel generativeModel({required String model});
+  VaiGenerativeModel generativeModel({String? model});
 }

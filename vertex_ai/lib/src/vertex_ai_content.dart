@@ -6,6 +6,9 @@ const vaiContentRoleUser = 'user';
 /// Model producer
 const vaiContentRoleModel = 'model';
 
+/// Standard api
+typedef Content = VaiContent;
+
 /// The base structured datatype containing multi-part content of a message.
 class VaiContent {
   /// The producer of the content.
@@ -26,7 +29,7 @@ class VaiContent {
   factory VaiContent.text(String text) =>
       VaiContent(vaiContentRoleUser, [VaiContentTextPart(text)]);
 
-  /// Return a [Content] with [DataPart].
+  /// Return a [Content] with [InlineDataPart].
   factory VaiContent.data(String mimeType, Uint8List bytes) =>
       VaiContent(vaiContentRoleUser, [VaiContentDataPart(mimeType, bytes)]);
 
@@ -43,6 +46,9 @@ class VaiContent {
 class VaiContentPart {}
 
 /// A [Part] with the text content.
+typedef TextPart = VaiContentTextPart;
+
+/// A [Part] with the text content.
 final class VaiContentTextPart implements VaiContentPart {
   /// Constructor
   VaiContentTextPart(this.text);
@@ -55,11 +61,14 @@ final class VaiContentTextPart implements VaiContentPart {
 }
 
 /// A [Part] with the byte content of a file.
+typedef InlineDataPart = VaiContentDataPart;
+
+/// A [Part] with the byte content of a file.
 final class VaiContentDataPart implements VaiContentPart {
   /// Constructor
   VaiContentDataPart(this.mimeType, this.bytes);
 
-  /// File type of the [DataPart].
+  /// File type of the [InlineDataPart].
   /// https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/send-multimodal-prompts#media_requirements
   final String mimeType;
 

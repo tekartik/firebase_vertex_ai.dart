@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:dev_build/shell.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:tekartik_prj_tktools/dsenv.dart';
 
 Future<String> getGeminiApiKey() async {
-  var apiKey = ShellEnvironment().vars['TEKARTIK_GEMINI_API_KEY'];
-  if (apiKey == null) {
-    stderr.writeln('TEKARTIK_GEMINI_API_KEY not set');
+  try {
+    return await dsUserEnvGetVar('TEKARTIK_GEMINI_API_KEY');
+  } catch (e) {
+    stderr.writeln('Cannot find TEKARTIK_GEMINI_API_KEY');
     exit(1);
   }
-  return apiKey;
 }
 
 Future<void> main(List<String> args) async {
