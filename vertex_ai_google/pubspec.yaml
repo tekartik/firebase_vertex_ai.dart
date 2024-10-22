@@ -1,7 +1,7 @@
 name: tekartik_firebase_vertex_ai_google
-description: A starting point for Dart libraries or applications.
+description: Standalone vertex ai mapped to google generative ai
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+publish_to: none
 
 environment:
   sdk: ^3.5.3
