@@ -1,3 +1,5 @@
+export 'src/generation_config.dart' show GenerationConfig;
+export 'src/schema.dart' show Schema, SchemaType;
 export 'src/vertex_ai.dart' show FirebaseVertexAi, FirebaseVertexAiService;
 export 'src/vertex_ai_api.dart' show VaiGenerateContentResponse;
 export 'src/vertex_ai_constant.dart';

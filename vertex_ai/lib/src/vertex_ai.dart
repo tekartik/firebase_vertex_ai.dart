@@ -23,5 +23,6 @@ abstract class FirebaseVertexAi
   /// The optional [safetySettings] and [generationConfig] can be used to
   /// control and guide the generation. See [SafetySetting] and
   /// [GenerationConfig] for details.
-  VaiGenerativeModel generativeModel({String? model});
+  VaiGenerativeModel generativeModel(
+      {String? model, GenerationConfig? generationConfig});
 }
