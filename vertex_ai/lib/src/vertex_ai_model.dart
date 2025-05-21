@@ -16,5 +16,6 @@ abstract class VaiGenerativeModel {
   /// print(response.text);
   /// ```
   Future<VaiGenerateContentResponse> generateContent(
-      Iterable<VaiContent> prompt);
+    Iterable<VaiContent> prompt,
+  );
 }

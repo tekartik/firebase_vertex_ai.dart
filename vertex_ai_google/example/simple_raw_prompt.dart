@@ -14,8 +14,10 @@ Future<String> getGeminiApiKey() async {
 
 Future<void> main(List<String> args) async {
   var apiKey = await getGeminiApiKey();
-  final model =
-      GenerativeModel(model: 'gemini-1.5-flash-latest', apiKey: apiKey);
+  final model = GenerativeModel(
+    model: 'gemini-1.5-flash-latest',
+    apiKey: apiKey,
+  );
   final prompt = 'Sum 1 and 4';
   final content = Content.text(prompt);
   final response = await model.generateContent([content]);

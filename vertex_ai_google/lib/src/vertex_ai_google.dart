@@ -44,13 +44,16 @@ class _FirebaseVertexAiGoogle
   FirebaseApp get app => appLocal;
 
   @override
-  VaiGenerativeModel generativeModel(
-      {String? model, GenerationConfig? generationConfig}) {
+  VaiGenerativeModel generativeModel({
+    String? model,
+    GenerationConfig? generationConfig,
+  }) {
     model ??= vertexAiModelGemini1dot5Flash;
     var nativeModel = gai.GenerativeModel(
-        model: model,
-        apiKey: serviceGoogle.apiKey,
-        generationConfig: generationConfig?.toGaiGenerationConfig());
+      model: model,
+      apiKey: serviceGoogle.apiKey,
+      generationConfig: generationConfig?.toGaiGenerationConfig(),
+    );
     return VaiGenerativeModelGoogle(this, nativeModel);
   }
 }
@@ -96,27 +99,31 @@ extension on Map<String, Object?> {
 
 extension on Schema {
   gai.Schema toGaiSchema() {
-    return gai.Schema(type.toGaiSchemaType(),
-        items: items?.toGaiSchema(),
-        format: format,
-        description: description,
-        enumValues: enumValues,
-        nullable: nullable,
-        properties:
-            properties?.map((key, value) => MapEntry(key, value.toGaiSchema())),
-        requiredProperties: properties?.keysWithout(optionalProperties));
+    return gai.Schema(
+      type.toGaiSchemaType(),
+      items: items?.toGaiSchema(),
+      format: format,
+      description: description,
+      enumValues: enumValues,
+      nullable: nullable,
+      properties: properties?.map(
+        (key, value) => MapEntry(key, value.toGaiSchema()),
+      ),
+      requiredProperties: properties?.keysWithout(optionalProperties),
+    );
   }
 }
 
 extension on GenerationConfig {
   gai.GenerationConfig toGaiGenerationConfig() {
     return gai.GenerationConfig(
-        candidateCount: candidateCount,
-        maxOutputTokens: maxOutputTokens,
-        temperature: temperature,
-        topP: topP,
-        topK: topK,
-        responseMimeType: responseMimeType,
-        responseSchema: responseSchema?.toGaiSchema());
+      candidateCount: candidateCount,
+      maxOutputTokens: maxOutputTokens,
+      temperature: temperature,
+      topP: topP,
+      topK: topK,
+      responseMimeType: responseMimeType,
+      responseSchema: responseSchema?.toGaiSchema(),
+    );
   }
 }
