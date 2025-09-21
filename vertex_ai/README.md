@@ -9,6 +9,5 @@ In `pubspec.yaml`:
   tekartik_firebase_vertex_ai:
     git:
       url: https://github.com/tekartik/firebase_vertex_ai.dart
-      ref: dart3a
       path: vertex_ai
 ```

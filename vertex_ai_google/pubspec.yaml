@@ -14,29 +14,24 @@ dependencies:
   tekartik_firebase_vertex_ai:
     git:
       url: https://github.com/tekartik/firebase_vertex_ai.dart
-      ref: dart3a
       path: vertex_ai
   tekartik_firebase:
     git:
       url: https://github.com/tekartik/firebase.dart
-      ref: dart3a
       path: firebase
   tekartik_firebase_local:
     git:
       url: https://github.com/tekartik/firebase.dart
-      ref: dart3a
       path: firebase_local
   tekartik_common_utils:
     git:
       url: https://github.com/tekartik/common_utils.dart
-      ref: dart3a
 
 dev_dependencies:
   lints: ">=5.0.0"
   tekartik_prj_tktools:
     git:
       url: https://github.com/tekartikprj/tktools.git
-      ref: dart3a
       path: packages/prj_tktools
   test: ">=1.24.0"
 resolution: workspace
