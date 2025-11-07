@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:tekartik_prj_tktools/dsenv.dart';
 
-Future<String> getGeminiApiKey() async {
+String getGeminiApiKey() {
   try {
-    return await dsUserEnvGetVar('TEKARTIK_GEMINI_API_KEY');
+    return dsUserEnvGetVarSync('TEKARTIK_GEMINI_API_KEY');
   } catch (e) {
     stderr.writeln('Cannot find TEKARTIK_GEMINI_API_KEY');
     exit(1);
@@ -13,7 +13,7 @@ Future<String> getGeminiApiKey() async {
 }
 
 Future<void> main(List<String> args) async {
-  var apiKey = await getGeminiApiKey();
+  var apiKey = getGeminiApiKey();
   final model = GenerativeModel(
     model: 'gemini-1.5-flash-latest',
     apiKey: apiKey,
