@@ -23,7 +23,7 @@ extension on VaiContentPart {
     } else if (part is VaiContentDataPart) {
       return gai.DataPart(part.mimeType, part.bytes);
     } else {
-      throw 'Unsupported part $part (${part.runtimeType})';
+      throw UnsupportedError('Unsupported part $part (${part.runtimeType})');
     }
   }
 }
