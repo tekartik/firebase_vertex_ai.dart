@@ -10,7 +10,6 @@ import 'vertex_ai_model_google.dart';
 abstract class FirebaseVertexAiServiceGoogle
     implements FirebaseVertexAiService {
   /// Optionnal auth service
-  ///
   factory FirebaseVertexAiServiceGoogle({required String apiKey}) {
     return _FirebaseVertexAiServiceGoogle(apiKey: apiKey);
   }
@@ -54,6 +53,7 @@ class _FirebaseVertexAiGoogle
       apiKey: serviceGoogle.apiKey,
       generationConfig: generationConfig?.toGaiGenerationConfig(),
     );
+
     return VaiGenerativeModelGoogle(this, nativeModel);
   }
 }

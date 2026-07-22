@@ -46,6 +46,7 @@ class VaiGenerativeModelGoogle implements VaiGenerativeModel {
     var nativeResponse = await nativeInstance.generateContent(
       prompt.toNative(),
     );
+
     return VaiGenerateContentResponseGoogle(nativeResponse);
   }
 }
