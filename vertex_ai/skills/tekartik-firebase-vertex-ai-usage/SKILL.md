@@ -29,9 +29,9 @@ Platform-neutral vertex ai / gemini interface, following the
 * There is **no `close()`**: lifecycle follows the `FirebaseApp`, delete the
   app instead. This is the main difference with `tekartik_google_ai`.
 * `response.text` is nullable; check it rather than using `!`.
-* `generativeModel()` with no `model` falls back to whatever the backend
-  chooses, currently `vertexAiModelGemini1dot5Flash`, which is old. Pass an
-  explicit current model.
+* `generativeModel()` with no `model` uses `vertexAiModelDefault`
+  (`gemini-2.5-flash`), a pinned model; pass an explicit model to choose.
+  `vertexAiModelGemini1dot5Flash` is retired and deprecated.
 * The interface is deliberately small: `generateContent` with text and inline
   data parts, plus `GenerationConfig`. There is no model listing, streaming,
   image generation, embedding, token counting or function calling. Use

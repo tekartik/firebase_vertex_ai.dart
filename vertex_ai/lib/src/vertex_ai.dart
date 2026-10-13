@@ -12,13 +12,13 @@ abstract class FirebaseVertexAi
     implements FirebaseAppProduct<FirebaseVertexAi> {
   /// Create a [GenerativeModel] backed by the generative model named [model].
   ///
-  /// The [model] argument can be a model name (such as `'gemini-pro'`) or a
-  /// model code (such as `'models/gemini-pro'`).
+  /// The [model] argument can be a model name (such as `'gemini-2.5-flash'`)
+  /// or a model code (such as `'models/gemini-2.5-flash'`).
   /// There is no creation time check for whether the `model` string identifies
   /// a known and supported model. If not, attempts to generate content
   /// will fail.
   ///
-  /// default to gemini-1.5-flash
+  /// Defaults to [vertexAiModelDefault] (`gemini-2.5-flash`).
   ///
   /// The optional [safetySettings] and [generationConfig] can be used to
   /// control and guide the generation. See [SafetySetting] and

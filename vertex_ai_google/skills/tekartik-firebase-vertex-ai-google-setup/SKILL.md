@@ -26,8 +26,8 @@ abstraction, this package only wires it up.
   `FirebaseAppLocal`, the implementation casts to it and throws otherwise.
 * Never hardcode an api key, read it from the environment. The examples use
   `dsUserEnvGetVarSync('TEKARTIK_GEMINI_API_KEY')`.
-* **Pass an explicit model.** `generativeModel()` falls back to
-  `vertexAiModelGemini1dot5Flash` (`gemini-1.5-flash`), which is old.
+* `generativeModel()` without a model uses `vertexAiModelDefault`
+  (`gemini-2.5-flash`), a pinned model; pass one explicitly to choose.
 * `google_generative_ai` is **discontinued** upstream in favour of the Flutter
   only `firebase_ai`. For new pure Dart code prefer `tekartik_google_ai`,
   built on the maintained `googleai_dart`, which also adds model listing and
@@ -80,5 +80,5 @@ parameter) and following `nextPageToken`. Copy that, or use
 ## Common mistakes
 
 * Passing a non `FirebaseAppLocal` app to `service.vertexAi(app)`.
-* Relying on the default model and silently running on `gemini-1.5-flash`.
+* Passing the retired `vertexAiModelGemini1dot5Flash` (deprecated).
 * Expecting streaming, image generation or model listing here.

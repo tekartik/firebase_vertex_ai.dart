@@ -47,7 +47,7 @@ class _FirebaseVertexAiGoogle
     String? model,
     GenerationConfig? generationConfig,
   }) {
-    model ??= vertexAiModelGemini1dot5Flash;
+    model ??= vertexAiModelDefault;
     var nativeModel = gai.GenerativeModel(
       model: model,
       apiKey: serviceGoogle.apiKey,
@@ -114,10 +114,13 @@ extension on Schema {
   }
 }
 
-extension on GenerationConfig {
+/// Conversion to the google_generative_ai config (not exported).
+extension GenerationConfigGoogleExt on GenerationConfig {
+  /// The google_generative_ai config.
   gai.GenerationConfig toGaiGenerationConfig() {
     return gai.GenerationConfig(
       candidateCount: candidateCount,
+      stopSequences: stopSequences,
       maxOutputTokens: maxOutputTokens,
       temperature: temperature,
       topP: topP,
