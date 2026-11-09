@@ -87,7 +87,7 @@ something `generativeImageModel` does not expose.
 | --- | --- | --- |
 | entry point | `FirebaseVertexAiService.vertexAi(app)` | `GoogleAiService.googleAi(options)` / `GoogleAi(apiKey: ...)` |
 | prefix | `Vai` | `Gai` |
-| backend | `google_generative_ai` (discontinued) | `googleai_dart` |
+| backend | `google_generative_ai` (discontinued) or `firebase_ai` (Flutter) | `googleai_dart` |
 | lifecycle | tied to the firebase app | explicit `close()` |
 | model listing | none | `listModels()` |
 | image generation | none | `generativeImageModel()` |

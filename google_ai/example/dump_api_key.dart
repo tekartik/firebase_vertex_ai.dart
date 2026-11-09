@@ -2,14 +2,13 @@ import 'dart:io';
 
 import 'api_key.dart';
 
-/// Dump the Google AI api key the other examples run with.
+/// Show which Google AI api key the other examples run with, masked.
 ///
-/// Useful to check what `TEKARTIK_GEMINI_API_KEY` resolves to, and to confirm
-/// it is set at all, since [getGeminiApiKey] otherwise fails at the first
-/// request.
-///
-/// The key is printed in clear: do not run this while sharing a screen, and
-/// do not paste its output anywhere.
+/// Useful to check that `TEKARTIK_GEMINI_API_KEY` is set (otherwise
+/// [getGeminiApiKey] exits with an error) and which key it is: only its first
+/// characters and its length are printed, never the key itself.
 void main(List<String> args) {
-  stdout.writeln(getGeminiApiKey());
+  var apiKey = getGeminiApiKey();
+  var start = apiKey.length > 12 ? apiKey.substring(0, 4) : '';
+  stdout.writeln('$start... (${apiKey.length} characters)');
 }

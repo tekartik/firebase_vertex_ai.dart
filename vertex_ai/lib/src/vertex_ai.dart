@@ -20,9 +20,8 @@ abstract class FirebaseVertexAi
   ///
   /// Defaults to [vertexAiModelDefault] (`gemini-2.5-flash`).
   ///
-  /// The optional [safetySettings] and [generationConfig] can be used to
-  /// control and guide the generation. See [SafetySetting] and
-  /// [GenerationConfig] for details.
+  /// The optional [generationConfig] controls and guides the generation of
+  /// every request made through the model.
   VaiGenerativeModel generativeModel({
     String? model,
     GenerationConfig? generationConfig,

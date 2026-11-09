@@ -27,7 +27,8 @@ app is already a firebase app.
 * `GoogleAi` owns an http client: always `close()` it in a `finally`. Nothing
   else manages its lifecycle, unlike the firebase variant where the app does.
   The instance must not be used after `close()`.
-* Never hardcode an api key. Read it from the environment, for instance
+* Never hardcode an api key, nor print it (the `dump_api_key` example prints
+  it masked). Read it from the environment, for instance
   `dsUserEnvGetVarSync('TEKARTIK_GEMINI_API_KEY')` as the examples do.
 * Omit `model` to get `googleAiModelDefault` (`gemini-2.5-flash`), or pass a
   constant: `googleAiModelGemini2dot5Flash`, `googleAiModelGemini2dot5Pro`,

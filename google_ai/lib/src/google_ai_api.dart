@@ -18,9 +18,11 @@ abstract class GaiGenerateContentResponse {
 
   /// Parts of the first candidate, empty if there is no candidate.
   ///
-  /// Parts this abstraction does not model (thoughts, function calls, code
-  /// execution) are dropped. Pass this back as `GaiContent.model(parts)` in a
-  /// follow up prompt to refine a generated image.
+  /// Parts this abstraction does not model (function calls, code execution)
+  /// are dropped; a thought summary (only returned when the request asks for
+  /// thoughts) comes as a text part. Pass this back as
+  /// `GaiContent.model(parts)` in a follow up prompt to refine a generated
+  /// image.
   List<GaiContentPart> get parts;
 
   /// Image parts of the first candidate, empty if the response has none.

@@ -12,7 +12,10 @@ description: >-
 Platform-neutral vertex ai / gemini interface, following the
 `tekartik_firebase` product pattern: a `FirebaseVertexAiService` attaches a
 `FirebaseVertexAi` to a `FirebaseApp`. **No backend ships here**:
-`tekartik_firebase_vertex_ai_google` implements it on `google_generative_ai`.
+`tekartik_firebase_vertex_ai_google` implements it on `google_generative_ai`
+(`FirebaseVertexAiServiceGoogle(apiKey: ...)`, Dart VM) and
+`tekartik_firebase_vertex_ai_flutter` (repo `firebase_flutter`) on
+`firebase_ai` (`firebaseVertexAiServiceFlutter`).
 
 ## Guidelines
 
@@ -93,7 +96,7 @@ native client. `tekartik_firebase_vertex_ai_google` is the worked example.
 | firebase | required | none |
 | entry point | `service.vertexAi(app)` | `GoogleAi(apiKey: ...)` |
 | lifecycle | the firebase app | explicit `close()` |
-| backend | `google_generative_ai` (discontinued) | `googleai_dart` |
+| backend | `google_generative_ai` (discontinued) or `firebase_ai` (Flutter) | `googleai_dart` |
 | model listing | no | `listModels()` |
 | image generation | no | `generativeImageModel()` |
 

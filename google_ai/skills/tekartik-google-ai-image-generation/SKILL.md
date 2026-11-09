@@ -43,8 +43,10 @@ they can be fed straight back to refine them.
   than a text one. Never put image generation in a retry loop, a benchmark or
   a CI test; cover the decoding path with a fake response instead.
 * `response.parts` exposes the first candidate's parts. Parts the abstraction
-  does not model (thoughts, function calls, code execution) are dropped rather
-  than failing the response, so thought signatures do not survive a round trip.
+  does not model (function calls, code execution) are dropped rather than
+  failing the response (a thought summary, only returned when thoughts are
+  requested, comes as a text part), so thought signatures do not survive a
+  round trip.
 
 ## Examples
 

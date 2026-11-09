@@ -51,8 +51,8 @@ abstract class GoogleAi {
   /// Create a [GaiGenerativeModel] backed by the generative model named
   /// [model].
   ///
-  /// The [model] argument can be a model name (such as `'gemini-2.5-flash'`)
-  /// or a model code (such as `'models/gemini-2.5-flash'`), and defaults to
+  /// The [model] argument is a model id (such as `'gemini-2.5-flash'`, see
+  /// [GaiModelInfo.id]), not the `models/...` resource name, and defaults to
   /// [googleAiModelDefault]. There is no creation time check for whether the
   /// `model` string identifies a known and supported model. If not, attempts
   /// to generate content will fail.
