@@ -18,8 +18,7 @@ abstraction, this package only wires it up.
 * Import `package:tekartik_firebase_vertex_ai_google/vertex_ai_google.dart`.
   It re-exports the whole abstraction (`Content`, `Schema`,
   `GenerationConfig`, ...), so one import is enough. Never import
-  `package:tekartik_firebase_vertex_ai_google/src/...`; the examples do it as
-  a shortcut, that is not the pattern to copy.
+  `package:tekartik_firebase_vertex_ai_google/src/...`.
 * `FirebaseVertexAiGoogle(apiKey: ...)` is the short path: it creates a local
   firebase app for you. Use `FirebaseVertexAiServiceGoogle(apiKey: ...)` then
   `service.vertexAi(app)` when the app already exists; that `app` must be a

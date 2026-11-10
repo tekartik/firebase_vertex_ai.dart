@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:tekartik_firebase_vertex_ai/vertex_ai.dart';
-import 'package:tekartik_firebase_vertex_ai_google/src/vertex_ai_google.dart';
+// Re-exports package:tekartik_firebase_vertex_ai/vertex_ai.dart.
+import 'package:tekartik_firebase_vertex_ai_google/vertex_ai_google.dart';
 
 import 'simple_raw_prompt.dart';
 
